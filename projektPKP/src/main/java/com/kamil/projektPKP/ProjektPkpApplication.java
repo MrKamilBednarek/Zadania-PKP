@@ -4,9 +4,7 @@ import com.kamil.projektPKP.Service.getKanyeQuoteImpl;
 import com.kamil.projektPKP.model.Cytat;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -32,13 +30,8 @@ public class ProjektPkpApplication {
 			}
 			System.out.println("Write \"next\" to get another piece of Kanye wisdom.");
 		}
-		System.out.println("You got all kanye quotes.");
+		System.out.println("You've got all Kanye quotes.");
 		scanner.close();
-	}
-
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
 	}
 
 }
