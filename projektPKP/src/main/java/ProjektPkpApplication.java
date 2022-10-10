@@ -13,10 +13,11 @@ public class ProjektPkpApplication {
         Cytat madroscKanye;
         getKanyeQuoteImpl imp=new getKanyeQuoteImpl(new RestTemplate());
         Scanner scanner = new Scanner(System.in);
+        String linia=" ";
         ArrayList<String> cytaty = new ArrayList<String>();
-        System.out.println("Write \"next\" to get a piece of Kanye wisdom.");
-        while(cytaty.size()<122){
-            String linia=scanner.nextLine();
+        System.out.println("Write \"next\" to get a piece of Kanye wisdom or \"exit\" to finish program.");
+        while(cytaty.size()<122 && !linia.equalsIgnoreCase("exit")){
+            linia=scanner.nextLine();
             if (linia.equalsIgnoreCase("next")){
                 madroscKanye=imp.getOneQuote();
                 while(cytaty.contains(madroscKanye.getQuote())) {
@@ -25,9 +26,9 @@ public class ProjektPkpApplication {
                 cytaty.add(madroscKanye.getQuote());
                 System.out.println(madroscKanye.getQuote());
             }
-            System.out.println("Write \"next\" to get another piece of Kanye wisdom.");
         }
-        System.out.println("You've got all Kanye quotes.");
+        if(cytaty.size()==122){
+        System.out.println("You've got all Kanye quotes.");}
         scanner.close();
     }
 
