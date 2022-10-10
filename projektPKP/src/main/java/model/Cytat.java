@@ -1,4 +1,4 @@
-package com.kamil.projektPKP.model;
+package model;
 
 public class Cytat {
     private String quote;

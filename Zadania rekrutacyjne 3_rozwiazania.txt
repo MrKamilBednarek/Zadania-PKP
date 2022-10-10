@@ -3,7 +3,13 @@ Rozwiązania zadań proszę zacommitować na repozytorium GIT.
 
 1.
 1.A. W jakim celu używa się klas abstrakcyjnych, a w jakim interfejsów?
+
+1.A.Rozwiązanie
+
 1.B. Czym różni się tablica od listy liniowej?
+Tablica ma stały rozmiar podany przy tworzeniu, lista może go zmieniać.
+W tablicy dostęp do elementu odbywa się poprzez podanie indeksu, w liscie elementy mają znacznik na kolejny element (i na poprzedni w dwukierunkowej). Bezpośredni dostęp jest możliwy tylko do pierwszego elementu.
+Co za tym idzie do odczytu elementu na n-tej pozycji w tablicy potrzebna jest jedna operacja, w liscie n operacji (trzeba przejść po kolei od pierwszego elementu do elementu n).
 
 
 2.
@@ -11,7 +17,7 @@ Mając tablicę int[] numbers, wypełnioną liczbami całkowitymi i posortowaną
 
 private boolean search(int[] numbers, int x){}
 
-2.Rozwiązania
+2.Rozwiązanie
     private boolean search(int[] numbers, int x){
         if(numbers.length==0){
             return false;

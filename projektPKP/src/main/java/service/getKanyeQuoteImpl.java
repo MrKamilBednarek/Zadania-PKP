@@ -1,6 +1,6 @@
-package com.kamil.projektPKP.Service;
+package service;
 
-import com.kamil.projektPKP.model.Cytat;
+import model.Cytat;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
@@ -18,3 +18,4 @@ public class getKanyeQuoteImpl implements getKanyeQuote {
         return cytat;
     }
 }
+
