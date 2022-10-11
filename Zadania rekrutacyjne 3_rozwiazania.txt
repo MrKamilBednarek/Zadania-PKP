@@ -5,8 +5,15 @@ Rozwiązania zadań proszę zacommitować na repozytorium GIT.
 1.A. W jakim celu używa się klas abstrakcyjnych, a w jakim interfejsów?
 
 1.A.Rozwiązanie
+Jedno i drugie gdy potrzebujemy użyć jakichś metod w wielu klasach.
+Jeżeli mamy mieć jakąś konkretną hierarchię klas, to wygodnie użyc klasy abstrakcyjnej i po niej dziedziczyć. Zmiany w klaise bazowej od razu są dostępne w podklasach.
+Jak jednak potrzebujemy tylko różnych działań dla jakichś metod, to wygodniej użyć interfejsów. Poza tym można zaimplementować kilka interfejsów, a dziedziczyć tylko po jednej klasie. Interfejsy nie mogą jednak przechowywać stanu (tylko stałe i deklaracje metod).
+Dla przykładu można by na przykład zrobić klasę abstrakcyjną zwierzę i do tego takie klasy pochodne jak ryba, ssak itp (które też by się dzieliły). Wiadomo, że każde zwierze np oddycha, ma jakąś masę itd. I czego się nie wymyśli co jest prawdziwe dla zwierząt od razu było by dostępne dla klas pochodnich.
+Za to do takiej klasy pochodnej ryba można by dodać pływanie implementujac interfejs i opisujac ze ryba plywa machajac płetwami i odpowiednio wypełniając pęcherz pławny. Bo ten sam interfejs możemy użyć dla obiektu statek który nie ma nic wspólnego z naszą klasą zwierzę i oczywiście opis tego pływania będzie zupełnie inny.
 
 1.B. Czym różni się tablica od listy liniowej?
+
+1.B.Rozwiązanie
 Tablica ma stały rozmiar podany przy tworzeniu, lista może go zmieniać.
 W tablicy dostęp do elementu odbywa się poprzez podanie indeksu, w liscie elementy mają znacznik na kolejny element (i na poprzedni w dwukierunkowej). Bezpośredni dostęp jest możliwy tylko do pierwszego elementu.
 Co za tym idzie do odczytu elementu na n-tej pozycji w tablicy potrzebna jest jedna operacja, w liscie n operacji (trzeba przejść po kolei od pierwszego elementu do elementu n).

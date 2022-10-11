@@ -1,6 +1,6 @@
 package model;
 
-public class Cytat {
+public class OneQuote {
     private String quote;
 
     public String getQuote() {

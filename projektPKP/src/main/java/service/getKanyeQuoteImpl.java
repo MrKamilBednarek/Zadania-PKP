@@ -1,6 +1,6 @@
 package service;
 
-import model.Cytat;
+import model.OneQuote;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.client.RestTemplate;
@@ -13,8 +13,8 @@ public class getKanyeQuoteImpl implements getKanyeQuote {
     }
 
     @Override
-    public Cytat getOneQuote() {
-        Cytat cytat=restTemplate.exchange("https://api.kanye.rest/", HttpMethod.GET, HttpEntity.EMPTY,Cytat.class).getBody();
+    public OneQuote getOneQuote() {
+        OneQuote cytat=restTemplate.exchange("https://api.kanye.rest/", HttpMethod.GET, HttpEntity.EMPTY, OneQuote.class).getBody();
         return cytat;
     }
 }

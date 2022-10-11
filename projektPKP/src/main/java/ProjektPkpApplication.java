@@ -1,5 +1,5 @@
 
-import model.Cytat;
+import model.OneQuote;
 import org.springframework.web.client.RestTemplate;
 import service.getKanyeQuoteImpl;
 
@@ -10,24 +10,24 @@ import java.util.Scanner;
 public class ProjektPkpApplication {
 
     public static void main(String[] args) {
-        Cytat madroscKanye;
+        OneQuote kanyeWisdom;
         getKanyeQuoteImpl imp=new getKanyeQuoteImpl(new RestTemplate());
         Scanner scanner = new Scanner(System.in);
-        String linia=" ";
-        ArrayList<String> cytaty = new ArrayList<String>();
+        String line=" ";
+        ArrayList<String> quotesList = new ArrayList<>();
         System.out.println("Write \"next\" to get a piece of Kanye wisdom or \"exit\" to finish program.");
-        while(cytaty.size()<122 && !linia.equalsIgnoreCase("exit")){
-            linia=scanner.nextLine();
-            if (linia.equalsIgnoreCase("next")){
-                madroscKanye=imp.getOneQuote();
-                while(cytaty.contains(madroscKanye.getQuote())) {
-                    madroscKanye=imp.getOneQuote();
+        while(quotesList.size()<122 && !line.equalsIgnoreCase("exit")){
+            line=scanner.nextLine();
+            if (line.equalsIgnoreCase("next")){
+                kanyeWisdom=imp.getOneQuote();
+                while(quotesList.contains(kanyeWisdom.getQuote())) {
+                    kanyeWisdom=imp.getOneQuote();
                 }
-                cytaty.add(madroscKanye.getQuote());
-                System.out.println(madroscKanye.getQuote());
+                quotesList.add(kanyeWisdom.getQuote());
+                System.out.println(kanyeWisdom.getQuote());
             }
         }
-        if(cytaty.size()==122){
+        if(quotesList.size()==122){
         System.out.println("You've got all Kanye quotes.");}
         scanner.close();
     }

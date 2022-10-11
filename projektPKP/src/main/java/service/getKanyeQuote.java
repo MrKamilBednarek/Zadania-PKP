@@ -1,7 +1,7 @@
 package service;
 
-import model.Cytat;
+import model.OneQuote;
 
 public interface getKanyeQuote {
-    Cytat getOneQuote();
+    OneQuote getOneQuote();
 }
